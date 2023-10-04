@@ -1,0 +1,36 @@
+.add form {
+  margin-left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  z-index: 200;
+}
+
+.add form label::f .add form label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  z-index: 200;
+}
+
+.add-card {
+  /* position: absolute; */
+  /* top: -90px; */
+  /* left: 593px; */
+  /* margin: auto; */
+  width: 455px;
+  background: #fff;
+  box-shadow: 0px 2px 13px rgba(32, 47, 61, 0.13);
+  border-radius: 10px;
+  z-index: 200;
+}
+
+.create-header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 26px 0 0 26px;
+  height: 75px;
+  border-radius: 10px 10px 0 0;
+  background: rgba(55, 131, 245, 7%);
+  z-index: 200;
+}

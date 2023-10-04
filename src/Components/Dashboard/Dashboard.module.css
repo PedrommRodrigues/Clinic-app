@@ -1,0 +1,57 @@
+.section {
+  position: absolute;
+  top: 92px;
+  left: 152px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+  color: #a1acb1;
+  width: 234px;
+  height: 37px;
+  background-color: #fff;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.menu p {
+  margin: auto;
+  color: #a1acb1;
+}
+
+.menu i {
+  margin-left: 14px;
+}
+
+.card-section {
+  margin-top: 21px;
+  height: 702px;
+  border-radius: 10px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 2050px) {
+  .first-row {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 2900px) {
+  .first-row {
+    margin-bottom: 60px;
+  }
+}

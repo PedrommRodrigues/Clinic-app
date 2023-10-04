@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  height: 72px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hospital {
+  display: flex;
+  align-items: center;
+  gap: 13.5px;
+  padding-left: 30.5px;
+}
+
+.header button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.picture {
+  border-radius: 50%;
+  margin-left: 60px;
+  margin-right: 15px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 26px;
+}
+
+.user-info p:first-of-type {
+  color: #202123;
+}
+
+.spec {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #a1acb1;
+}

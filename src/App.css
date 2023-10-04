@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100%;
+  max-width: 100%;
+  background-color: #a9adb6;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  background-color: #f7f8fc;
+  position: absolute;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+}
+
+/* Text */
+
+.text-main {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #70797e;
+}
+
+.text-medium {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.text-semibold {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #70797e;
+}
+
+.text-h2 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.text-h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.text-h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #202123;
+}
+
+.text-h4-regular {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Buttons */
+
+.btn-cancel {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 12px 60px;
+  color: #70797e;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #aebec8;
+  color: #fff;
+}
+
+.btn-accept {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #3783f5;
+  padding: 12px 19px;
+  color: #fff;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accept:hover {
+  background-color: #1e63d8;
+}
+
+.btn-cancel-sm {
+  color: #a1acb1;
+  width: 85px;
+  height: 44px;
+  background-color: rgba(0.631, 0.675, 0.694, 0.07);
+  border-radius: 10px;
+  border: 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel-sm:hover {
+  background-color: rgba(0.631, 0.675, 0.694, 0.2);
+  color: #fff;
+}
+
+.btn-accept-sm {
+  width: 120px;
+  height: 44px;
+  color: #3783f5;
+  background-color: rgba(55, 131, 245, 0.07);
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accept-sm:hover {
+  background-color: rgba(55, 131, 245, 0.2);
+}
+
+.btn-disabled {
+  color: #70797e;
+  cursor: not-allowed;
+}
+
+.btn-accept.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Card */
+.bg-gray {
+  background-color: #a1acb1;
+  opacity: 0.85;
+  filter: blur(1px);
+}

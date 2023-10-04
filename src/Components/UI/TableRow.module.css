@@ -1,0 +1,80 @@
+.table th:first-child {
+  padding-right: 80px;
+}
+
+.text {
+  color: #70797e;
+  font-size: 14px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text span {
+  color: #202123;
+}
+
+.eligible {
+  display: flex;
+  gap: 8px;
+}
+
+.eligible div {
+  align-items: center;
+  display: flex;
+  color: #06a689;
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #a1acb1;
+  position: absolute;
+}
+
+.cancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 26px;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  display: flex;
+}
+
+.icon img {
+  z-index: 100;
+  height: 18px;
+}
+
+.cancel-text {
+  color: #a1acb1;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.modal {
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

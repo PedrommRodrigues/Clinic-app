@@ -1,0 +1,65 @@
+.section {
+  position: absolute;
+  top: 92px;
+  left: 152px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+  color: #a1acb1;
+}
+
+.menu div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  color: #a1acb1;
+}
+
+.menu div:hover {
+  color: #06a689;
+}
+
+.card-section {
+  margin-top: 21px;
+  height: 508px;
+  background: #fff;
+  box-shadow: 0px 2px 13px rgba(32, 47, 61, 0.13);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* @media screen and (max-height: 500px) {
+  .card-section {
+    height: 202px;
+  }
+}
+
+@media screen and (min-height: 831px) and (max-height: 1000px) {
+  .card-section {
+    height: 702px;
+  }
+} */
+
+@media screen and (min-height: 831px) and (max-height: 1000px) {
+  .card-section {
+    height: 700px;
+  }
+}
+
+@media screen and (min-height: 1500) {
+  .card-section {
+    height: 1000px;
+  }
+}
