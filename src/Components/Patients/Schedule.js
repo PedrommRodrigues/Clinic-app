@@ -62,10 +62,6 @@ const Schedule = (props) => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         props.onClosing();
-        console.log("cancel test");
-      } else if (event.key === "Enter") {
-        event.preventDefault();
-        console.log(test);
       }
     };
 
