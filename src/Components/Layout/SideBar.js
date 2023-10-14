@@ -35,33 +35,23 @@ const SideBar = () => {
     {
       id: 1,
       label: "Appointments",
-      icon: "fa-regular fa-calendar-check fa-xl"
+      icon: "fa-regular fa-calendar-check fa-xl",
     },
     {
       id: 2,
       label: "Patients",
-      icon: "fas fa-users fa-xl"
+      icon: "fas fa-users fa-xl",
     },
     {
       id: 3,
       label: "Dashboard",
-      icon: "fas fa-th-large fa-xl"
+      icon: "fas fa-th-large fa-xl",
     },
     {
       id: 4,
       label: "Request",
-      icon: "far fa-list-alt fa-xl"
+      icon: "far fa-list-alt fa-xl",
     },
-    {
-      id: 5,
-      label: "SMS Chat",
-      icon: "fa-regular fa-comment fa-xl"
-    },
-    {
-      id: 6,
-      label: "Settings",
-      icon: "fa-solid fa-gear fa-xl"
-    }
   ];
 
   return (

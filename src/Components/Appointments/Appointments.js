@@ -6,6 +6,36 @@ import TableRow from "../UI/TableRow";
 import SmallMenu from "../UI/SmallMenu";
 
 const Appointments = () => {
+  const notChecked = <img src="/Images/icons/check-one.svg" alt="checked" />;
+  const checked = <img src="/Images/icons/check-double.svg" alt="checked" />;
+
+  const tableHeader = [
+    {
+      id: 1,
+      label: "Patient",
+    },
+    {
+      id: 2,
+      label: "Reason",
+    },
+    {
+      id: 3,
+      label: "Appointment",
+    },
+    {
+      id: 4,
+      label: "COVID Status",
+    },
+    {
+      id: 5,
+      label: "Actions",
+    },
+    {
+      id: 6,
+      label: "",
+    },
+  ];
+
   const patientCtx = useContext(PatientContext);
 
   const { mergedAppointments } = patientCtx;
@@ -23,6 +53,8 @@ const Appointments = () => {
   const [check, setCheck] = useState({});
 
   const [call, setCall] = useState({});
+
+  /* ----------------------------- Date formating ----------------------------- */
 
   const today = new Date().getDate();
   const month = new Date().toLocaleString("en-US", { month: "short" });
@@ -204,37 +236,6 @@ const Appointments = () => {
     />
   );
 
-  const notChecked = <img src="/Images/icons/check-one.svg" alt="checked" />;
-
-  const checked = <img src="/Images/icons/check-double.svg" alt="checked" />;
-
-  const tableHeader = [
-    {
-      id: 1,
-      label: "Patient",
-    },
-    {
-      id: 2,
-      label: "Reason",
-    },
-    {
-      id: 3,
-      label: "Appointment",
-    },
-    {
-      id: 4,
-      label: "COVID Status",
-    },
-    {
-      id: 5,
-      label: "Actions",
-    },
-    {
-      id: 6,
-      label: "",
-    },
-  ];
-
   return (
     <MenuContainer
       title="Appointments"
@@ -261,7 +262,7 @@ const Appointments = () => {
           </p>
           <div className={classes["header-container"]}>
             <div className={classes["header-menu"]}>
-              <div ref={menuRef}>
+              <div>
                 <div className={classes.menu} onClick={selectType}>
                   <p className={"text-main"}>Type: {typeName}</p>
                   <img
@@ -273,7 +274,10 @@ const Appointments = () => {
                   />
                 </div>
                 {isTypeMenuOpen && (
-                  <div className={classes["small-menu-container"]}>
+                  <div
+                    ref={menuRef}
+                    className={classes["small-menu-container"]}
+                  >
                     <SmallMenu
                       onTypeSelected={onTypeSelected}
                       selected={typeName}
@@ -282,7 +286,7 @@ const Appointments = () => {
                   </div>
                 )}
               </div>
-              <div ref={menuRef} className={classes.test}>
+              <div>
                 <div className={classes.menu} onClick={eligibleFor}>
                   <p className={"text-main"}>Eligible for: {eligibleType} </p>
                   <img
@@ -294,7 +298,10 @@ const Appointments = () => {
                   />
                 </div>
                 {isEligibleMenuOpen && (
-                  <div className={classes["small-menu-container"]}>
+                  <div
+                    ref={menuRef}
+                    className={classes["small-menu-container"]}
+                  >
                     <SmallMenu
                       onEligibleSelected={onEligibleSelected}
                       selected={eligibleType}

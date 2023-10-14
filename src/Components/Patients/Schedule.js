@@ -53,7 +53,6 @@ const Schedule = (props) => {
 
   const onAddAppt = (e) => {
     e.preventDefault();
-
     addAppointment(appttValues);
     onClosing();
   };
