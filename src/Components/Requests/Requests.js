@@ -18,6 +18,19 @@ const Requests = () => {
     setSelectedMenu(id);
   };
 
+  /* ---------------------------------- Updating number of incoming and requests ---------------------------------- */
+
+  const [incomingNumber, setIncomingNumber] = useState("");
+
+  const settingIncomingData = (props) => {
+    setIncomingNumber(props);
+  };
+
+  const [requestNumber, setRequestNumber] = useState("2");
+
+  const settingRequestNumber = (props) => {
+    setRequestNumber(props);
+  };
   /* ------------------------------ Display menus ----------------------------- */
 
   const [isProviderMenuOpen, setIsproviderMenuOpen] = useState(false);
@@ -73,7 +86,7 @@ const Requests = () => {
               selectedMenu === "1" ? classes["text-h4-with-border"] : ""
             }
           >
-            Incoming Requests ({mergedAppointments.length})
+            Incoming Requests ({incomingNumber})
           </p>
           <p
             onClick={() => menuHandler("2")}
@@ -81,7 +94,7 @@ const Requests = () => {
               selectedMenu === "2" ? classes["text-h4-with-border"] : ""
             }
           >
-            Medication Refill Requests (2)
+            Medication Refill Requests ({requestNumber})
           </p>
         </div>
         <div className={`${classes["filter-section"]} text-main`}>
@@ -123,9 +136,13 @@ const Requests = () => {
         </div>
       </div>
       {selectedMenu === "1" ? (
-        <Incoming filterText={searchText} providerLabel={providerLabel} />
+        <Incoming
+          filterText={searchText}
+          providerLabel={providerLabel}
+          incomingNumber={settingIncomingData}
+        />
       ) : (
-        <Medication />
+        <Medication settingRequestNumber={settingRequestNumber} />
       )}
     </MenuContainer>
   );

@@ -1,35 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Requests.module.css";
 
-const Medication = () => {
+const Medication = ({ settingRequestNumber }) => {
   const tableHeader = [
     {
       id: 1,
-      label: "Patient"
+      label: "Patient",
     },
     {
       id: 2,
-      label: "Date"
+      label: "Date",
     },
     {
       id: 3,
-      label: "Medication name"
+      label: "Medication name",
     },
     {
       id: 4,
-      label: "Dosage"
+      label: "Dosage",
     },
     {
       id: 5,
-      label: "Frequency"
+      label: "Frequency",
     },
     {
       id: 6,
-      label: ""
-    }
+      label: "",
+    },
   ];
 
-  const tableData = [
+  // const tableData = [
+  //   {
+  //     id: "0",
+  //     name: "Cameron Williamson",
+  //     birthday: "21.08.1975",
+  //     date: "21 Jan 2023",
+  //     medName: "Advil",
+  //     dosage: "500mg",
+  //     frequency: "Once a day",
+  //   },
+  //   {
+  //     id: "1",
+  //     name: "Ronald Richards",
+  //     birthday: "21.08.1966",
+  //     date: "21 Jan 2023",
+  //     medName: "Advil",
+  //     dosage: "500mg",
+  //     frequency: "Once a day",
+  //   },
+  // ];
+
+  /* ----------------------- button functionality ----------------------- */
+
+  const [dataToRender, setDataToRender] = useState([
     {
       id: "0",
       name: "Cameron Williamson",
@@ -37,7 +60,7 @@ const Medication = () => {
       date: "21 Jan 2023",
       medName: "Advil",
       dosage: "500mg",
-      frequency: "Once a day"
+      frequency: "Once a day",
     },
     {
       id: "1",
@@ -46,9 +69,16 @@ const Medication = () => {
       date: "21 Jan 2023",
       medName: "Advil",
       dosage: "500mg",
-      frequency: "Once a day"
-    }
-  ];
+      frequency: "Once a day",
+    },
+  ]);
+
+  const cancelButton = (id) => {
+    const newTableData = dataToRender.filter((item) => item.id !== id);
+    setDataToRender(newTableData);
+  };
+
+  settingRequestNumber(dataToRender.length);
 
   return (
     <div className={classes["patient-list-container"]}>
@@ -61,7 +91,7 @@ const Medication = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((patient) => {
+          {dataToRender.map((patient) => {
             const age = (birthday) => {
               const today = new Date().getFullYear();
               const clientAge = new Date(birthday).getFullYear();
@@ -84,9 +114,20 @@ const Medication = () => {
                   <td>{patient.dosage}</td>
                   <td>{patient.frequency}</td>
                   <td>
-                    <div>
-                      <button className="btn-accept-sm">Appointment</button>
-                      <button className="btn-cancel-sm green">Approve</button>
+                    <div className={classes.buttons}>
+                      <button
+                        style={{ marginRight: "18px" }}
+                        className="btn-accept-sm"
+                      >
+                        Appointment
+                      </button>
+                      <button
+                        style={{ marginRight: "18px" }}
+                        className={classes["call-green"]}
+                        onClick={() => cancelButton(patient.id)}
+                      >
+                        Approve
+                      </button>
                     </div>
                   </td>
                 </tr>

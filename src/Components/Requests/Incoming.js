@@ -3,10 +3,15 @@ import classes from "./Requests.module.css";
 import PatientContext from "../Store/patient-context";
 import TableRow from "../UI/TableRow";
 
-const Incoming = ({ filterText, providerLabel }) => {
+const Incoming = ({ filterText, providerLabel, incomingNumber }) => {
   const patientCtx = useContext(PatientContext);
 
   const { mergedAppointments, addAppointment } = patientCtx;
+
+  const [appointmentsToRender, setAppointmentsToRender] =
+    useState(mergedAppointments);
+
+  incomingNumber(appointmentsToRender.length);
 
   const videocallImg = (
     <img
@@ -29,9 +34,18 @@ const Incoming = ({ filterText, providerLabel }) => {
     }));
   };
 
+  /* ----------------------------- button section ----------------------------- */
+
+  const cancelButton = (id) => {
+    const updatedAppointments = sortedAppointments.filter(
+      (appointment) => appointment.id !== id
+    );
+    setAppointmentsToRender(updatedAppointments);
+  };
+
   /* ----------------------------- Sorting section ---------------------------- */
 
-  const sortedAppointments = [...mergedAppointments].sort((a, b) => {
+  const sortedAppointments = [...appointmentsToRender].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
 
@@ -48,6 +62,7 @@ const Incoming = ({ filterText, providerLabel }) => {
     return dateA.getDate() - dateB.getDate();
   });
 
+  console.log(sortedAppointments.length);
   /* ------------------------------- Data format ------------------------------ */
 
   const formatDate = (date) => {
@@ -150,10 +165,16 @@ const Incoming = ({ filterText, providerLabel }) => {
                   <td className={classes.buttons}>
                     <button
                       className={`${classes["spacing-btn"]} btn-cancel-sm`}
+                      onClick={() => cancelButton(patient.id)}
                     >
                       Cancel
                     </button>
-                    <button className="btn-accept-sm">Confirm</button>
+                    <button
+                      className="btn-accept-sm"
+                      onClick={() => cancelButton(patient.id)}
+                    >
+                      Confirm
+                    </button>
                     <img
                       onClick={() => openDetails(patient.id)}
                       style={{
