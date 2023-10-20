@@ -34,14 +34,23 @@
 
 .card-section {
   margin-top: 21px;
-  height: 702px;
-  border-radius: 10px;
+
+  /* height: 702px; */
+  /* border-radius: 10px; */
 }
 
 .first-row {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 587px) {
+  .first-row {
+    gap: 5px;
+  }
 }
 
 @media screen and (min-width: 2050px) {
@@ -53,5 +62,11 @@
 @media screen and (min-width: 2900px) {
   .first-row {
     margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .card-section {
+    height: 500px;
   }
 }

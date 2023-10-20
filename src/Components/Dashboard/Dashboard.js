@@ -51,7 +51,7 @@ const Dashboard = () => {
       number: "830",
       label: "Online Request",
       color: "#06a689",
-      background: "rgba(6, 166, 137, 0.07)"
+      background: "rgba(6, 166, 137, 0.07)",
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ const Dashboard = () => {
       number: "215",
       label: "Patients Schedule",
       color: "#3783F5",
-      background: "rgba(55, 131, 245, 0.07)"
+      background: "rgba(55, 131, 245, 0.07)",
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ const Dashboard = () => {
       number: "134",
       label: "Video Consults",
       color: "#A26BBE",
-      background: "rgba(162, 107, 190, 0.07)"
+      background: "rgba(162, 107, 190, 0.07)",
     },
     {
       id: 4,
@@ -75,8 +75,8 @@ const Dashboard = () => {
       number: "4.9",
       label: "Average Rating",
       color: "#E1E812",
-      background: "rgba(225, 232, 18, 0.07)"
-    }
+      background: "rgba(225, 232, 18, 0.07)",
+    },
   ];
 
   const bottomCards = [
@@ -84,26 +84,26 @@ const Dashboard = () => {
       id: 1,
       number: "84 %",
       label: "AWV Performance Efficiency",
-      color: "#06A689"
+      color: "#06A689",
     },
     {
       id: 2,
       number: "99 %",
       label: "RPM Enrollment Efficiency",
-      color: "#05B9C5"
+      color: "#05B9C5",
     },
     {
       id: 3,
       number: "$ 4,920",
       label: "RPM Revenue Potential",
-      color: "#3783F5"
+      color: "#3783F5",
     },
     {
       id: 4,
       number: "$ 10,500",
       label: "Preventative Care Revenue Potential",
-      color: "#A26BBE"
-    }
+      color: "#A26BBE",
+    },
   ];
 
   return (
@@ -123,15 +123,27 @@ const Dashboard = () => {
         <div className={classes["card-section"]}>
           <div className={classes["first-row"]}>
             {topCards.map((item) => (
-              <TopCard
-                onClick={() => selectedCard(item.id)}
-                key={item.id}
-                icon={item.icon}
-                number={item.number}
-                label={item.label}
-                color={item.color}
-                background={item.background}
-              />
+              <div key={item.id} style={{ position: "relative" }}>
+                <TopCard
+                  onClick={() => selectedCard(item.id)}
+                  icon={item.icon}
+                  number={item.number}
+                  label={item.label}
+                  color={item.color}
+                  background={item.background}
+                />
+                {selectedId === item.id && (
+                  <PopUp
+                    title={item.label}
+                    number={item.number}
+                    icon={item.icon}
+                    color={item.color}
+                    background={item.background}
+                    id={item.id}
+                    selectedCard={selectedCard}
+                  />
+                )}
+              </div>
             ))}
           </div>
           <div className={classes["first-row"]}>
@@ -145,16 +157,6 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
-        {selectedId && (
-          <PopUp
-            title={topCards[selectedId - 1].label}
-            number={topCards[selectedId - 1].number}
-            icon={topCards[selectedId - 1].icon}
-            color={topCards[selectedId - 1].color}
-            background={topCards[selectedId - 1].background}
-            selectedCard={() => setSelectedId(null)}
-          />
-        )}
       </div>
     </>
   );

@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import classes from "./PopUp.module.css";
 import CircleIcon from "./CircleIcon";
 
-const PopUp = ({ title, number, icon, color, background, selectedCard }) => {
+const PopUp = ({
+  title,
+  number,
+  icon,
+  color,
+  background,
+  selectedCard,
+  id,
+}) => {
   const female = "/Images/girl.svg";
   const male = "/Images/boy.svg";
 
@@ -10,47 +18,50 @@ const PopUp = ({ title, number, icon, color, background, selectedCard }) => {
     {
       id: "1",
       name: "Annete Black",
-      gender: female
+      gender: female,
     },
     {
       id: "2",
       name: "Cameron Williamson",
-      gender: male
+      gender: male,
     },
     {
       id: "3",
       name: "Savannah Nguyen",
-      gender: female
+      gender: female,
     },
     {
       id: "4",
       name: "Jenny Wilson",
-      gender: female
+      gender: female,
     },
     {
       id: "5",
       name: "Darlene Robertson",
-      gender: female
+      gender: female,
     },
     {
       id: "6",
       name: "Floyd Miles",
-      gender: male
+      gender: male,
     },
     {
       id: "7",
       name: "Denise Fonts",
-      gender: female
+      gender: female,
     },
     {
       id: "8",
       name: "Floyd Miles",
-      gender: male
-    }
+      gender: male,
+    },
   ];
 
   return (
-    <div className={classes.container}>
+    <div
+      style={{ left: id === 4 ? "-140px" : "100px" }}
+      className={classes.container}
+    >
       <div className={classes.header} style={{ backgroundColor: background }}>
         <i className={icon} style={{ color: color }}></i>
         <div className={classes.title}>
@@ -62,7 +73,7 @@ const PopUp = ({ title, number, icon, color, background, selectedCard }) => {
         </div>
       </div>
       <div className={classes.list}>
-        <table>
+        <table className={classes.test}>
           <tbody>
             {clients.map((client) => (
               <tr key={client.id}>
