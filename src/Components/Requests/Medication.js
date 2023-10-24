@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Requests.module.css";
+import PatientContext from "../Store/patient-context";
 
 const Medication = ({ settingRequestNumber }) => {
   const tableHeader = [
@@ -28,27 +29,6 @@ const Medication = ({ settingRequestNumber }) => {
       label: "",
     },
   ];
-
-  // const tableData = [
-  //   {
-  //     id: "0",
-  //     name: "Cameron Williamson",
-  //     birthday: "21.08.1975",
-  //     date: "21 Jan 2023",
-  //     medName: "Advil",
-  //     dosage: "500mg",
-  //     frequency: "Once a day",
-  //   },
-  //   {
-  //     id: "1",
-  //     name: "Ronald Richards",
-  //     birthday: "21.08.1966",
-  //     date: "21 Jan 2023",
-  //     medName: "Advil",
-  //     dosage: "500mg",
-  //     frequency: "Once a day",
-  //   },
-  // ];
 
   /* ----------------------- button functionality ----------------------- */
 
@@ -118,8 +98,9 @@ const Medication = ({ settingRequestNumber }) => {
                       <button
                         style={{ marginRight: "18px" }}
                         className="btn-accept-sm"
+                        onClick={() => cancelButton(patient.id)}
                       >
-                        Appointment
+                        Cancel
                       </button>
                       <button
                         style={{ marginRight: "18px" }}

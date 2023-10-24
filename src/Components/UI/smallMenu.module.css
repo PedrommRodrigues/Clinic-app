@@ -20,29 +20,13 @@
   color: #06a689;
 }
 
-/* .modal {
-  animation: slide-down 300ms ease-out forwards;
-}
-
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
-
 .modal {
   animation: slide-down 300ms ease-out forwards;
-  animation-play-state: paused; /* Pause the animation by default */
+  animation-play-state: paused;
 }
 
-/* Add a class to start the animation */
 .modal.active {
-  animation-play-state: running; /* Start the animation when the 'active' class is applied */
+  animation-play-state: running;
 }
 
 @keyframes slide-down {

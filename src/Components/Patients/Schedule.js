@@ -57,6 +57,8 @@ const Schedule = (props) => {
     onClosing();
   };
 
+  /* ---------------------------- Event to close the component --------------------------- */
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {

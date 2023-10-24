@@ -5,7 +5,6 @@ table {
 
 thead {
   position: sticky;
-  top: 0;
   background-color: white;
   z-index: 100;
 }
@@ -20,17 +19,14 @@ th {
 
 thead th:nth-child(1) {
   padding-left: 27px;
-  /* width: 350px; */
 }
 
 thead th:nth-child(2) {
   padding-left: 27px;
-  /* width: 350px; */
 }
 
 thead th:nth-child(6) {
   padding-left: 27px;
-  /* width: 300px; */
 }
 
 tr {
@@ -124,9 +120,10 @@ tbody th:nth-child(1) {
 
 .buttons {
   display: flex;
-  /* align-items: center; */
-  justify-content: flex-end;
   padding-right: 6px;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
 }
 
 .call-blue {
@@ -276,19 +273,58 @@ tbody th:nth-child(1) {
   }
 }
 
-@media screen and (max-width: 1310px) {
-  thead th:nth-child(1) {
-    width: 200px;
-  }
-
-  thead th:nth-child(2) {
-    width: 200px;
-  }
-}
-
 @media screen and (max-width: 1190px) {
   thead th:nth-child(1) {
     width: 150px;
+  }
+
+  .list {
+    padding-left: 13px;
+  }
+
+  thead {
+    font-size: 13px !important;
+  }
+
+  table {
+    font-size: 12px !important;
+  }
+
+  button {
+    font-size: 12px !important;
+  }
+
+  .counter {
+    font-size: 13px !important;
+  }
+
+  .menu p {
+    font-size: 12px !important;
+  }
+
+  .menu {
+    background-color: #f7f8fc;
+    display: flex;
+    border-radius: 10px;
+    padding: 2px 2px 3px 3px;
+    gap: 2px;
+    cursor: pointer;
+  }
+
+  .details,
+  .message {
+    padding: 3px 3px;
+    align-items: center;
+  }
+
+  .call-blue,
+  .call-green {
+    padding: 3px 3px;
+  }
+
+  .united img,
+  .type img {
+    display: none;
   }
 
   thead th:nth-child(2) {

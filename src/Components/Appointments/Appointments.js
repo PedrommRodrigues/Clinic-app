@@ -241,7 +241,7 @@ const Appointments = () => {
       title="Appointments"
       headerSection={
         <>
-          <div>
+          <div className={classes.list}>
             <i className="fa-solid fa-list" style={{ color: "#06A689" }}></i>
             <p style={{ color: "#06A689" }}>List</p>
           </div>
@@ -385,7 +385,7 @@ const Appointments = () => {
                       </th>
                       <td>{appt.reason}</td>
                       <td className={classes.center}>
-                        <div>
+                        <div className={classes.type}>
                           {appt.type === `videocall`
                             ? videocallImg
                             : inPersonImg}
